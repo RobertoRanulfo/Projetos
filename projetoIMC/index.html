@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMC</title>
+
+  <!-- CSS extra -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- CSS bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body class="bg-info">
+  <section class="container bg-light">
+    <h2 class="display-5">Tabela IMC</h2>
+
+    <table class="table table-light table-hover">
+      <tr>
+        <th>IMC</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td>Menos do que 18,5</td>
+        <td>Abaixo do peso</td>
+      </tr>
+      <tr>
+        <td>Entre 18.5 e 24.9</td>
+        <td>Peso normal</td>
+      </tr>
+      <tr>
+        <td>Entre 25 e 29,9</td>
+        <td>Sobrepeso</td>
+      </tr>
+      <tr>
+        <td>Entre 30 e 34,9</td>
+        <td>Obesidade grau 1</td>
+      </tr>
+      <tr>
+        <td>Entre 35 e 39,9</td>
+        <td>Obesidade grau 2</td>
+      </tr>
+      <tr>
+        <td>Mais do que 40</td>
+        <td>Obesidade grau 3</td>
+      </tr>
+    </table>
+
+    <h2 class="display-">Calcule seu IMC</h2>
+
+    <form class="form" action="" id="formulario">
+
+        <label class="form-label" for="peso">Peso (em kg)</label>
+        <input class="form-control" type="text" id="peso">
+
+        <label class="form-label" for="altura">Altura (em centímetros)</label>
+        <input class="form-control" type="text" id="altura">
+
+        <button class="btn btn-warning" type="submit">Enviar</button>
+
+    </form>
+
+    <div id="resultado">
+      
+    </div>
+  </section>
+
+  <!-- script da aplicação -->
+  <script src="./assets/js/main.js"></script>
+
+  <!-- script Bootrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>
