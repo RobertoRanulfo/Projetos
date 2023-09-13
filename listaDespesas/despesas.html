@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+</head>
+<body class="bg-light">
+    <h2 class="display-3 p-3">Lançamento de despesas</h2>
+    <form class="form m-3 p-2">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="form-label" for="fornecedor">Fornecedor</label>
+                <input class="form-control" type="text" id="fornecedor" name="fornecedor" placeholder="digite o fornecedor" required>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="data">Data</label>
+                <input class="form-control" type="date" name="data" id="data" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label class="form-label" for="tipo">Tipo de despesa</label>
+                <select class="form-select" name="tipo" id="tipo" required>
+                    <option value="" selected disabled>marque uma opção</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="estudos">Estudos</option>
+                    <option value="diversao">Diversão</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="valor">Valor</label>
+                <input class="form-control" type="number" id="valor" placeholder="digite o valor do gasto" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 m-2">
+                <input class="btn btn-lg btn-primary mt-3" type="button" value="Registrar" onclick="registrar()">
+            </div>
+            <div class="col-md-1 m-2">
+                <input class="btn btn-lg btn-warning mt-3" type="button" value="Ver relatório" onclick="registrar()">
+            </div>
+        </div>
+            
+        
+    </form>
+    <br><br>
+    <h2 class='display-3 p-3'>Relatório de lançamentos</h2>
+    <div id="lista-despesa">
+        <ul id="despesas">
+           
+        </ul>
+        
+
+    </div>
+
+    <script>
+        const registrar =()=>{
+            const fornecedor = document.getElementById('fornecedor').value;
+            const tipo = document.getElementById('tipo').value;
+            const data = document.getElementById('data').value;
+            const valor = document.getElementById('valor').value;
+
+            const listaDespesas = {
+                fornecedor: fornecedor,
+                tipo: tipo,
+                data: data,
+                valor: valor
+            }
+            
+            const relatorio = document.getElementById('despesas'); // id da ul elemento pai
+            const lancamento = document.createElement('li');
+            lancamento.textContent = `Fornecedor: ${listaDespesas.fornecedor} | Tipo: ${listaDespesas.tipo} | Data: ${listaDespesas.data} | Valor: R$ ${listaDespesas.valor}`;
+            relatorio.appendChild(lancamento)
+
+            
+            console.log(listaDespesas)
+            document.getElementById('fornecedor').value = '';
+            document.getElementById('data').value='';
+            document.getElementById('valor').value='';
+            
+        }
+
+        
+
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+</body>
+</html>
